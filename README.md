@@ -12,7 +12,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/yashoswalyo/MERGE-BOT?color=red)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/yashoswalyo/MERGE-BOT)
 
-An Telegram Bot By [Devil]([https://t.me/yashoswalyo](https://t.me/Devilservers)) To Merge multiple Videos in Telegram into single video. <br>
+An Telegram Bot By [Devil]([https://t.me/Devilservers]) To Merge multiple Videos in Telegram into single video. <br>
 Bugs should be reported at: [Telegram Group](https://t.me/Devilservers)
 
 ```diff
