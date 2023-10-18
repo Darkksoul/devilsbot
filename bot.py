@@ -108,7 +108,7 @@ async def loginHandler(c: Client, m: Message):
             )
         else:
             await m.reply_text(
-                text=f"**Login failed ❌,**\n  🛡️ Unfortunately you can't use me\n\nContact: 🈲 @{Config.OWNER_USERNAME}",
+                text=f"**Login failed ❌,**\n  ❤️Unfortunately you can't use me❤️ Message Here for Using The Bot @takinggbot\n\nContact: 🈲 @{Config.OWNER_USERNAME}",
                 quote=True,
             )
     user.set()
