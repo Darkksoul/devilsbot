@@ -146,7 +146,7 @@ async def callback_handler(c: Client, cb: CallbackQuery):
         user = UserSettings(cb.from_user.id, cb.from_user.first_name)
         if "YES" in cb.data:
             await cb.message.edit(
-                "Current filename: **[@yashoswalyo]_merged.mkv**\n\nSend me new file name without extension: You have 1 minute"
+                "Current filename: **[@Devilservers]_merged.mkv**\n\nSend me new file name without extension: You have 1 minute"
             )
             res: Message = await c.listen(
                 (cb.message.chat.id,None,None), filters=filters.text, timeout=150
