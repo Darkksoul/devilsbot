@@ -219,7 +219,7 @@ async def files_handler(c: Client, m: Message):
     if user_id != int(Config.OWNER):
         if user.allowed is False:
             res = await m.reply_text(
-                text=f"Hi **{m.from_user.first_name}**\n\n ⚠️ Unfortunately you can't use me Message Bot Onwer for Using The Bot @takinggbot\n\n**Contact: 🈲 @{Config.OWNER_USERNAME}** ",
+                text=f"Hi **{m.from_user.first_name}**\n\n ⚠️ Unfortunately you can't use me\n\n**Contact: 🈲 @{Config.OWNER_USERNAME}** ",
                 quote=True,
             )
             return
