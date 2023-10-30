@@ -89,7 +89,7 @@ async def sendLogFile(c: Client, m: Message):
 async def loginHandler(c: Client, m: Message):
     user = UserSettings(m.from_user.id, m.from_user.first_name)
     if user.banned:
-        await m.reply_text(text=f"**Banned User Detected!**\n ⚠️ Unfortunately you can't use me Message Bot Onwer for Using The Bot @takinggbot\n\nContact: 🈲 @{Config.OWNER_USERNAME}", quote=True)
+        await m.reply_text(text=f"**Banned User Detected!**\n  ⚠️ Unfortunately you can't use me Message Bot Onwer for Using The Bot @takinggbot\n\nContact: 🈲 @{Config.OWNER_USERNAME}", quote=True)
         return
     if user.user_id == int(Config.OWNER):
         user.allowed = True
@@ -108,7 +108,7 @@ async def loginHandler(c: Client, m: Message):
             )
         else:
             await m.reply_text(
-                text=f"**Login failed ❌,**\n ⚠️ Unfortunately you can't use me Message Bot Onwer for Using The Bot @takinggbot\n\nContact: 🈲 @{Config.OWNER_USERNAME}",
+                text=f"**Login failed ❌,**\n  ⚠️ Unfortunately you can't use me Message Bot Onwer for Using The Bot @takinggbot\n\nContact: 🈲 @{Config.OWNER_USERNAME}",
                 quote=True,
             )
     user.set()
@@ -196,7 +196,7 @@ async def start_handler(c: Client, m: Message):
     if m.from_user.id != int(Config.OWNER):
         if user.allowed is False:
             res = await m.reply_text(
-                text=f"Hi **{m.from_user.first_name}**\n\n ⚠️ Unfortunately you can't use me Message Bot Onwer for Using The Bot @takinggbot\n\n**Contact: 🈲 @{Config.OWNER_USERNAME}** ",
+                text=f"Hi **{m.from_user.first_name}**\n\n  ⚠️ Unfortunately you can't use me Message Bot Onwer for Using The Bot @takinggbot\n\n**Contact: 🈲 @{Config.OWNER_USERNAME}** ",
                 quote=True,
             )
             return
