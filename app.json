@@ -24,7 +24,7 @@
         },
         "OWNER_USERNAME": {
 		"description": "User name of bot owner"
-	};
+	},
         "DATABASE_URL": {
             "description": "Enter your mongodb URI"
         },
