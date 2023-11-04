@@ -10,33 +10,11 @@
 	"repository": "https://github.com/yashoswalyo/MERGE-BOT",
 	"website": "https://telegram.dog/yashoswalyo",
 	"stack": "container",
-	"env":  "TELEGRAM_API": {
-            "description": "Get this value from my.telegram.org or @TeleORG_Bot"
-        },
-        "API_HASH": {
-            "description": "Get this value from my.telegram.org or @TeleORG_Bot"
-        },
-        "BOT_TOKEN": {
-            "description": "Get this from @BotFather XD"
-        },
-        "OWNER": {
-            "description": "Bot Owner UserID"
-        },
-        "OWNER_USERNAME": {
-		"description": "User name of bot owner"
+	"env": {
+		"CONFIG_FILE_URL": {
+			"description": "Make Config on gist and paste raw link "
+		}
 	},
-        "DATABASE_URL": {
-            "description": "Enter your mongodb URI"
-        },
-        "PASSWORD": {
-            "description": "Enter password to login bot9"
-	},
-        "LOGCHANNEL": {
-            "description": "Logs Channel ID for some Tracking XD. Example: -100123456789"
-	},
-        "USER_SESSION_STRING": {
-            "description": "Premium account session string to upload upto 4GB (requires `LOGCHANNEL`)",
-    },
 	"formation": {
 		"worker": {
 			"quantity": 1,
