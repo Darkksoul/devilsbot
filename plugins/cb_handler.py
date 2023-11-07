@@ -1,6 +1,5 @@
 import asyncio
 import os
-from pyrogram import Filters
 from bot import (
     LOGGER,
     UPLOAD_AS_DOC,
@@ -149,20 +148,17 @@ async def callback_handler(c: Client, cb: CallbackQuery):
                 "Current filename: **[@Devilservers]_merged.mkv**\n\nSend me new file name without extension: You have 1 minute"
             )
             res: Message = await c.listen(
-                (cb.message.chat.id, None, None),
-                filters=filters.text & Filters.user(cb.from_user.id),
-                timeout=150
+                (cb.message.chat.id, None, None), filters=filters.text, timeout=150
             )
             if res.text:
                 new_file_name = f"downloads/{str(cb.from_user.id)}/{res.text}.mkv"
-                await res.delete(True)
+                await res.delete(True)  
             if user.merge_mode == 1:
                 await mergeNow(c, cb, new_file_name)
             elif user.merge_mode == 2:
                 await mergeAudio(c, cb, new_file_name)
             elif user.merge_mode == 3:
                 await mergeSub(c, cb, new_file_name)
-
             return
         if "NO" in cb.data:
             new_file_name = (
