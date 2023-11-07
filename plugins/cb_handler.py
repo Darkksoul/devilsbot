@@ -1,6 +1,6 @@
 import asyncio
 import os
-
+from pyrogram import Filters
 from bot import (
     LOGGER,
     UPLOAD_AS_DOC,
