@@ -1,6 +1,6 @@
 import asyncio
 import os
-from pyrogram import filters
+from pyrogram import Filters
 from bot import (
     LOGGER,
     UPLOAD_AS_DOC,
@@ -150,7 +150,7 @@ async def callback_handler(c: Client, cb: CallbackQuery):
             )
             res: Message = await c.listen(
                 (cb.message.chat.id, None, None),
-                filters=filters.text & filters.user(cb.from_user.id),
+                filters=filters.text & Filters.user(cb.from_user.id),
                 timeout=150
             )
             if res.text:
