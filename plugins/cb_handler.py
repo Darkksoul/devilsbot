@@ -1,5 +1,6 @@
 import asyncio
 import os
+
 from bot import (
     LOGGER,
     UPLOAD_AS_DOC,
@@ -34,16 +35,16 @@ async def callback_handler(c: Client, cb: CallbackQuery):
     # async def cb_handler(c: Client, cb: CallbackQuery):
     if cb.data == "merge":
         await cb.message.edit(
-            text="Where do you want to upload?",
+            text="Wʜᴇʀᴇ ᴅᴏ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴜᴘʟᴏᴀᴅ?",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            "📤 To Telegram", callback_data="to_telegram"
+                            "📤 Tᴏ ᴛᴇʟᴇɢʀᴀᴍ", callback_data="to_telegram"
                         ),
-                        InlineKeyboardButton("🌫️ To Drive", callback_data="to_drive"),
+                        InlineKeyboardButton("🌫️ Tᴏ ᴅʀɪᴠᴇ", callback_data="to_drive"),
                     ],
-                    [InlineKeyboardButton("⛔ Cancel ⛔", callback_data="cancel")],
+                    [InlineKeyboardButton("⛔ Cᴀɴᴄᴇʟ ⛔", callback_data="cancel")],
                 ]
             ),
         )
@@ -67,14 +68,14 @@ async def callback_handler(c: Client, cb: CallbackQuery):
             return
         UPLOAD_TO_DRIVE.update({f"{cb.from_user.id}": True})
         await cb.message.edit(
-            text="Okay I'll upload to drive\nDo you want to rename? Default file name is **[@Devilservers]_merged.mkv**",
+            text="Oᴋᴀʏ ɪ'ʟʟ ᴜᴘʟᴏᴀᴅ ᴛᴏ ᴅʀɪᴠᴇ\nDᴏ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ʀᴇɴᴀᴍᴇ? Dᴇғᴀᴜʟᴛ ғɪʟᴇ ɴᴀᴍᴇ ɪs **[@Devilservers]_merged.mkv**",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("👆 Default", callback_data="rename_NO"),
-                        InlineKeyboardButton("✍️ Rename", callback_data="rename_YES"),
+                        InlineKeyboardButton("👆 Dᴇғᴀᴜʟᴛ", callback_data="rename_NO"),
+                        InlineKeyboardButton("✍️ Rᴇɴᴀᴍᴇ", callback_data="rename_YES"),
                     ],
-                    [InlineKeyboardButton("⛔ Cancel ⛔", callback_data="cancel")],
+                    [InlineKeyboardButton("⛔ Cᴀɴᴄᴇʟ ⛔", callback_data="cancel")],
                 ]
             ),
         )
@@ -83,14 +84,14 @@ async def callback_handler(c: Client, cb: CallbackQuery):
     elif cb.data == "to_telegram":
         UPLOAD_TO_DRIVE.update({f"{cb.from_user.id}": False})
         await cb.message.edit(
-            text="How do yo want to upload file",
+            text="Hᴏᴡ ᴅᴏ ʏᴏ ᴡᴀɴᴛ ᴛᴏ ᴜᴘʟᴏᴀᴅ ғɪʟᴇ",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("🎞️ Video", callback_data="video"),
-                        InlineKeyboardButton("📁 File", callback_data="document"),
+                        InlineKeyboardButton("🎞️ Vɪᴅᴇᴏ", callback_data="video"),
+                        InlineKeyboardButton("📁 Fɪʟᴇ", callback_data="document"),
                     ],
-                    [InlineKeyboardButton("⛔ Cancel ⛔", callback_data="cancel")],
+                    [InlineKeyboardButton("⛔ Cᴀɴᴄᴇʟ ⛔", callback_data="cancel")],
                 ]
             ),
         )
@@ -99,14 +100,14 @@ async def callback_handler(c: Client, cb: CallbackQuery):
     elif cb.data == "document":
         UPLOAD_AS_DOC.update({f"{cb.from_user.id}": True})
         await cb.message.edit(
-            text="Do you want to rename? Default file name is **[@Devilservers]_merged.mkv**",
+            text="Dᴏ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ʀᴇɴᴀᴍᴇ? Dᴇғᴀᴜʟᴛ ғɪʟᴇ ɴᴀᴍᴇ ɪs **[@Devilservers]_merged.mkv**",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("👆 Default", callback_data="rename_NO"),
-                        InlineKeyboardButton("✍️ Rename", callback_data="rename_YES"),
+                        InlineKeyboardButton("👆 Dᴇғᴀᴜʟᴛ", callback_data="rename_NO"),
+                        InlineKeyboardButton("✍️ Rᴇɴᴀᴍᴇ", callback_data="rename_YES"),
                     ],
-                    [InlineKeyboardButton("⛔ Cancel ⛔", callback_data="cancel")],
+                    [InlineKeyboardButton("⛔ Cᴀɴᴄᴇʟ ⛔", callback_data="cancel")],
                 ]
             ),
         )
@@ -115,14 +116,14 @@ async def callback_handler(c: Client, cb: CallbackQuery):
     elif cb.data == "video":
         UPLOAD_AS_DOC.update({f"{cb.from_user.id}": False})
         await cb.message.edit(
-            text="Do you want to rename? Default file name is **[@Devilservers]_merged.mkv**",
+            text="Dᴏ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ʀᴇɴᴀᴍᴇ? Dᴇғᴀᴜʟᴛ ғɪʟᴇ ɴᴀᴍᴇ ɪs **[@Devilservers]_merged.mkv**",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton("👆 Default", callback_data="rename_NO"),
                         InlineKeyboardButton("✍️ Rename", callback_data="rename_YES"),
                     ],
-                    [InlineKeyboardButton("⛔ Cancel ⛔", callback_data="cancel")],
+                    [InlineKeyboardButton("⛔ Cᴀɴᴄᴇʟ ⛔", callback_data="cancel")],
                 ]
             ),
         )
@@ -145,20 +146,19 @@ async def callback_handler(c: Client, cb: CallbackQuery):
         user = UserSettings(cb.from_user.id, cb.from_user.first_name)
         if "YES" in cb.data:
             await cb.message.edit(
-                "Current filename: **[@Devilservers]_merged.mkv**\n\nSend me new file name without extension: You have 1 minute"
+                "Cᴜʀʀᴇɴᴛ ғɪʟᴇɴᴀᴍᴇ: **[@blvckangl]_merged.mkv**\n\nSᴇɴᴅ ᴍᴇ ɴᴇᴡ ғɪʟᴇ ɴᴀᴍᴇ ᴡɪᴛʜᴏᴜᴛ ᴇxᴛᴇɴsɪᴏɴ: ʏᴏᴜ ʜᴀᴠᴇ 𝟷 ᴍɪɴᴜᴛᴇ"
             )
-            res: Message = await c.listen(
-                (cb.message.chat.id, None, None), filters=filters.text & Filters.user(cb.from_user.id), timeout=150
-            )
+            res: Message = await c.listen(cb.message.chat.id, timeout=300)
             if res.text:
                 new_file_name = f"downloads/{str(cb.from_user.id)}/{res.text}.mkv"
-                await res.delete(True)  
+                await res.delete(True)
             if user.merge_mode == 1:
                 await mergeNow(c, cb, new_file_name)
             elif user.merge_mode == 2:
                 await mergeAudio(c, cb, new_file_name)
             elif user.merge_mode == 3:
                 await mergeSub(c, cb, new_file_name)
+
             return
         if "NO" in cb.data:
             new_file_name = (
@@ -185,13 +185,13 @@ async def callback_handler(c: Client, cb: CallbackQuery):
         chat_id, mes_id, from_usr = cmf[1], cmf[2], cmf[3]
         if int(cb.from_user.id) == int(from_usr):
             await c.answer_callback_query(
-                cb.id, text="Going to Cancel . . . 🛠", show_alert=False
+                cb.id, text="Gᴏɪɴɢ ᴛᴏ ᴄᴀɴᴄᴇʟ . . . 🛠", show_alert=False
             )
             gDict[int(chat_id)].append(int(mes_id))
         else:
             await c.answer_callback_query(
                 callback_query_id=cb.id,
-                text="⚠️ Opps ⚠️ \n I Got a False Visitor 🚸 !! \n\n 📛 Stay At Your Limits !!📛",
+                text="⚠️ Oᴘᴘs ⚠️ \n I ɢᴏᴛ ᴀ ғᴀʟsᴇ ᴠɪsɪᴛᴏʀ 🚸 !! \n\n 📛 Sᴛᴀʏ ᴀᴛ ʏᴏᴜʀ ʟɪᴍɪᴛs !!📛",
                 show_alert=True,
                 cache_time=0,
             )
@@ -223,15 +223,15 @@ async def callback_handler(c: Client, cb: CallbackQuery):
                         [
                             [
                                 InlineKeyboardButton(
-                                    "❌ Remove",
+                                    "❌ Rᴇᴍᴏᴠᴇ",
                                     callback_data=f"removeFile_{str(m.id)}",
                                 ),
                                 InlineKeyboardButton(
-                                    "📜 Add Subtitle",
+                                    "📜 Aᴅᴅ sᴜʙᴛɪᴛʟᴇ",
                                     callback_data=f"addSub_{str(sIndex)}",
                                 ),
                             ],
-                            [InlineKeyboardButton("🔙 Back", callback_data="back")],
+                            [InlineKeyboardButton("🔙 Bᴀᴄᴋ", callback_data="back")],
                         ]
                     ),
                 )
@@ -242,15 +242,15 @@ async def callback_handler(c: Client, cb: CallbackQuery):
                         [
                             [
                                 InlineKeyboardButton(
-                                    "❌ Remove",
+                                    "❌ Rᴇᴍᴏᴠᴇ",
                                     callback_data=f"removeFile_{str(m.id)}",
                                 ),
                                 InlineKeyboardButton(
-                                    "📜 Add Subtitle",
+                                    "📜 Aᴅᴅ sᴜʙᴛɪᴛʟᴇ",
                                     callback_data=f"addSub_{str(sIndex)}",
                                 ),
                             ],
-                            [InlineKeyboardButton("🔙 Back", callback_data="back")],
+                            [InlineKeyboardButton("🔙 Bᴀᴄᴋ", callback_data="back")],
                         ]
                     ),
                 )
@@ -265,15 +265,15 @@ async def callback_handler(c: Client, cb: CallbackQuery):
                         [
                             [
                                 InlineKeyboardButton(
-                                    "❌ Remove File",
+                                    "❌ Rᴇᴍᴏᴠᴇ ғɪʟᴇ",
                                     callback_data=f"removeFile_{str(m.id)}",
                                 ),
                                 InlineKeyboardButton(
-                                    "❌ Remove Subtitle",
+                                    "❌ Rᴇᴍᴏᴠᴇ sᴜʙᴛɪᴛʟᴇ",
                                     callback_data=f"removeSub_{str(sIndex)}",
                                 ),
                             ],
-                            [InlineKeyboardButton("🔙 Back", callback_data="back")],
+                            [InlineKeyboardButton("🔙 Bᴀᴄᴋ", callback_data="back")],
                         ]
                     ),
                 )
@@ -284,15 +284,15 @@ async def callback_handler(c: Client, cb: CallbackQuery):
                         [
                             [
                                 InlineKeyboardButton(
-                                    "❌ Remove File",
+                                    "❌ Rᴇᴍᴏᴠᴇ ғɪʟᴇ",
                                     callback_data=f"removeFile_{str(m.id)}",
                                 ),
                                 InlineKeyboardButton(
-                                    "❌ Remove Subtitle",
+                                    "❌ Rᴇᴍᴏᴠᴇ sᴜʙᴛɪᴛʟᴇ",
                                     callback_data=f"removeSub_{str(sIndex)}",
                                 ),
                             ],
-                            [InlineKeyboardButton("🔙 Back", callback_data="back")],
+                            [InlineKeyboardButton("🔙 Bᴀᴄᴋ", callback_data="back")],
                         ]
                     ),
                 )
@@ -302,12 +302,12 @@ async def callback_handler(c: Client, cb: CallbackQuery):
         sIndex = int(cb.data.split(sep="_")[1])
         vMessId = queueDB.get(cb.from_user.id)["videos"][sIndex]
         rmess = await cb.message.edit(
-            text=f"Send me a subtitle file, you have 1 minute",
+            text=f"Sᴇɴᴅ ᴍᴇ ᴀ sᴜʙᴛɪᴛʟᴇ ғɪʟᴇ, ʏᴏᴜ ʜᴀᴠᴇ 𝟷 ᴍɪɴᴜᴛᴇ",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            "🔙 Back", callback_data=f"showFileName_{vMessId}"
+                            "🔙 Bᴀᴄᴋ", callback_data=f"showFileName_{vMessId}"
                         )
                     ]
                 ]
@@ -320,12 +320,12 @@ async def callback_handler(c: Client, cb: CallbackQuery):
             media = subs.document or subs.video
             if media.file_name.rsplit(".")[-1] not in "srt":
                 await subs.reply_text(
-                    text=f"Please go back first",
+                    text=f"Pʟᴇᴀsᴇ ɢᴏ ʙᴀᴄᴋ ғɪʀsᴛ",
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
                                 InlineKeyboardButton(
-                                    "🔙 Back", callback_data=f"showFileName_{vMessId}"
+                                    "🔙 Bᴀᴄᴋ", callback_data=f"showFileName_{vMessId}"
                                 )
                             ]
                         ]
@@ -340,7 +340,7 @@ async def callback_handler(c: Client, cb: CallbackQuery):
                     [
                         [
                             InlineKeyboardButton(
-                                "🔙 Back", callback_data=f"showFileName_{vMessId}"
+                                "🔙 Bᴀᴄᴋ", callback_data=f"showFileName_{vMessId}"
                             )
                         ]
                     ]
@@ -348,7 +348,7 @@ async def callback_handler(c: Client, cb: CallbackQuery):
                 quote=True,
             )
             await rmess.delete(True)
-            LOGGER.info("Added sub to list")
+            LOGGER.info("Aᴅᴅᴇᴅ sᴜʙ ᴛᴏ ʟɪsᴛ")
         return
 
     elif cb.data.startswith("removeSub_"):
@@ -356,18 +356,18 @@ async def callback_handler(c: Client, cb: CallbackQuery):
         vMessId = queueDB.get(cb.from_user.id)["videos"][sIndex]
         queueDB.get(cb.from_user.id)["subtitles"][sIndex] = None
         await cb.message.edit(
-            text=f"Subtitle Removed Now go back or send next video",
+            text=f"Sᴜʙᴛɪᴛʟᴇ ʀᴇᴍᴏᴠᴇᴅ ɴᴏᴡ ɢᴏ ʙᴀᴄᴋ ᴏʀ sᴇɴᴅ ɴᴇxᴛ ᴠɪᴅᴇᴏ",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            "🔙 Back", callback_data=f"showFileName_{vMessId}"
+                            "🔙 Bᴀᴄᴋ", callback_data=f"showFileName_{vMessId}"
                         )
                     ]
                 ]
             ),
         )
-        LOGGER.info("Sub removed from list")
+        LOGGER.info("Sᴜʙ ʀᴇᴍᴏᴠᴇᴅ ғʀᴏᴍ ʟɪsᴛ")
         return
 
     elif cb.data == "back":
@@ -394,7 +394,7 @@ async def callback_handler(c: Client, cb: CallbackQuery):
         return
 
     elif cb.data == "tryotherbutton":
-        await cb.answer(text="Try other button → ☛")
+        await cb.answer(text="Tʀʏ ᴏᴛʜᴇʀ ʙᴜᴛᴛᴏɴ → ☛")
         return
 
     elif cb.data.startswith("toggleEdit_"):
